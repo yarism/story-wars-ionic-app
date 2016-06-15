@@ -1,0 +1,13 @@
+<ion-modal-view>
+	<div class="bar bar-header bar-storywars">
+        <button class="button button-clear" ng-click="newStoryModal.hide()">Cancel</button>
+        <h1 class="title">New story</h1>
+        <button class="button button-clear button-primary bold" ng-disabled="!newStory.title || !newStory.content" ng-click="createStory(newStory)">Publish</button>
+	</div>
+    <div class="modalContent-wrapper">
+    	<form class="content-wrapper">
+    		<input type="text" class="textInput inputTitle" ng-model="newStory.title" placeholder="Title of the story">
+    		<textarea class="textInput inputTextarea" ng-model="newStory.content" placeholder="Your story"></textarea>
+    	</form>
+    </div>
+</ion-modal-view>

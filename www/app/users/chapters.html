@@ -1,0 +1,18 @@
+<ion-view>
+    <ion-nav-title>Drafts</ion-nav-title>
+    <ion-content>
+        <div ng-show="!showChapters" ng-cloak class="textCenter marginTop--double">
+            <ion-spinner></ion-spinner>
+        </div>
+        <div ng-show="showChapters && !isLoading" ng-cloak>
+            <ion-list type="list" class="storyList">
+                <ion-item ng-repeat="chapter in chapters" href="#/app/stories/{{chapter.story_id}}">
+                    <p style="-webkit-line-clamp: 1000000;">{{chapter.content}}</p>
+                    <div class="storyList--footer">
+                        <span class="primaryColor bold"><i class="icon ion-heart"></i> {{chapter.points}}</span>
+                    </div>
+                </ion-item>
+            </ion-list>
+        </div>
+    </ion-content>
+</ion-view>

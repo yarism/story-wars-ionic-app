@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+
+    <!-- compiled css output -->
+    <link href="css/ionic.app.css?9=" rel="stylesheet">
+
+    <link href="lib/angularjs-toaster/toaster.css" rel="stylesheet">
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+
+    <script src="lib/angularjs-toaster/toaster.js"></script>
+    <script src="lib/lodash/dist/lodash.js"></script>
+    <script src="lib/restangular/dist/restangular.js"></script>
+    <script src="lib/satellizer/satellizer.js"></script>
+
+    <!-- ios9 patch -->
+    <script src="lib/angular-ios9-uiwebview.patch.js"></script>
+
+    <!-- your app's js -->
+    <script src="app/app.js"></script>
+    <script src="app/app.routes.js"></script>
+    <script src="app/common/common.js"></script>
+    <script src="app/common/auth.service.js"></script>
+    <script src="app/common/user.service.js"></script>
+    <script src="app/common/mixpanel.service.js"></script>
+    <script src="app/common/app.controller.js"></script>
+    <script src="app/intro/intro.controller.js"></script>
+    <script src="app/login/login.controller.js"></script>
+    <script src="app/users/user.controller.js"></script>
+    <script src="app/users/userStories.controller.js"></script>
+    <script src="app/users/userFavorites.controller.js"></script>
+    <script src="app/users/userChapters.controller.js"></script>
+    <script src="app/sidemenu/sidemenu.controller.js"></script>
+    <script src="app/stories/stories.controller.js"></script>
+    <script src="app/stories/story.controller.js"></script>
+    <script src="app/stories/stories.service.js"></script>
+    <script src="app/stories/chapter.service.js"></script>
+    
+    <!-- Use one of the below, will decide which server environment to run against -->
+    <!-- script src="app/common/constants.test.js"></script -->
+    <script src="app/common/constants.production.js"></script>
+
+    <!-- start Mixpanel -->
+    <script type="text/javascript">(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="js/mixpanel.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+        mixpanel.init("218d34f5297336b336ecd8743f839846");
+    </script>
+    <!-- end Mixpanel -->
+  </head>
+
+  <body ng-controller="AppController">
+    <toaster-container toaster-options="{'position-class': 'toast-top-full-width'}"></toaster-container>
+    <ion-nav-view></ion-nav-view>
+  </body>
+</html>

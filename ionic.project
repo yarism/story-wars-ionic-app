@@ -1,0 +1,12 @@
+{
+  "name": "Story Wars",
+  "app_id": "67fec63b",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}

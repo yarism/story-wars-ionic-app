@@ -1,0 +1,14 @@
+<ion-view cache-view="false">
+    <ion-nav-title>Following</ion-nav-title>
+    <ion-content>
+    	<div ng-show="!showFavorites" ng-cloak class="textCenter marginTop--double">
+            <ion-spinner></ion-spinner>
+        </div>
+        <div ng-show="showFavorites && !isLoading" ng-cloak>
+        <ion-list type="list" class="storyList usersList">
+            <ion-item ng-repeat="user in users" href="#/app/users/{{user.id}}">
+                <h2 class="h2 storyItem-title"><img ng-src="{{user.profileImageUrl}}"><span>{{user.name}}</span></h2>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

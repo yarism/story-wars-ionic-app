@@ -1,0 +1,32 @@
+<ion-view class="primaryBackground">
+    <ion-header-bar class="bar bar-header bar-storywars">
+        <button ng-click="myGoBack()" class="button back-button buttons  button-clear header-item"><i class="icon ion-ios-arrow-back"></i>
+            <span class="back-text" style="-webkit-transform: translate3d(0px, 0px, 0px);"><span class="default-title">Back</span></span>
+        </button>
+    </ion-header-bar>
+    <ion-content>
+        <div class="center-wrapper">
+            <form ng-submit="createUser(name, userName, password)">
+                <input class="textInput iconTextInput" style="border-bottom: 1px solid rgba(215, 215, 215, 0.3); border-radius: 3px 3px 0 0;" type="text" ng-model="name" name="name" placeholder="Name">
+                <input class="textInput iconTextInput" style="border-bottom: 1px solid rgba(215, 215, 215, 0.3); border-radius: 0;" type="text" ng-model="userName" name="username" placeholder="Email">
+                <input class="textInput iconTextInput marginBottom" style="border-radius: 0 0 3px 3px;" type="password" ng-model="password" name="password" placeholder="Password">
+                <button ng-show="!verifyNewAccountMessage"
+                    class="standardButton fullWidth"
+                    type="submit" ng-disabled="!name || !userName || !password">Sign up</button>
+                <div class="ng-hide" ng-cloak ng-show="verifyNewAccountMessage">
+                    {{verifyNewAccountMessage}}
+                    <div class="socialLogin" style="margin-top: 60px;">
+                        <ul class="socialLogin-buttons">
+                            <li>
+                                <a href="#/login" class="socialLogin--login">
+                                    <i class="ion-locked"></i>
+                                    <span>Login</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </ion-content>
+</ion-view>

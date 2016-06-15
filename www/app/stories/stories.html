@@ -1,0 +1,27 @@
+<ion-view view-title="Stories">
+    <ion-content>
+        <!-- It's too laggy to use right now -->
+        <!-- ion-refresher on-refresh="getStories()">
+        </ion-refresher -->
+        <div class="button-bar">
+            <a class="button" ng-click="setMode(1)" ng-class="{ 'button\-selected': mode == 1 }">Trending</a>
+            <a class="button" ng-click="setMode(2)" ng-class="{ 'button\-selected': mode == 2 }">Following</a>
+        </div>
+        <div ng-show="!showStories" ng-cloak class="textCenter marginTop--double">
+            <ion-spinner></ion-spinner>
+        </div>
+        <div ng-show="showStories && !isLoading" ng-cloak>
+            <ion-list type="list" class="storyList">
+                <ion-item ng-repeat="story in stories" href="#/app/stories/{{story.id}}">
+                    <h2 class="h2 storyItem-title">{{story.title}}</h2>
+                    <p>{{story.content}}</p>
+                    <div class="storyList--footer">
+                        <span class="primaryColor bold"><i class="icon ion-heart"></i> {{story.points}}</span>
+                        <span ng-if="story.state === 5"><i class="icon ion-checkmark-circled"></i> Vote on chapter {{story.round}}</span>
+                        <span ng-if="story.state === 0"><i class="icon ion-edit"></i> Write chapter {{story.round}}</span>
+                    </div>
+                </ion-item>
+            </ion-list>
+        </div>
+    </ion-content>
+</ion-view>

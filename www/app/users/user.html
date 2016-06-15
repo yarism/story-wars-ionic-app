@@ -1,0 +1,36 @@
+<ion-view>
+    <ion-nav-title>{{user.name}}'s corner</ion-nav-title>
+    <ion-nav-buttons side="right">
+        <div ng-show="notCurrentUser">
+            <button ng-show="!isFavorite && !isLoading" ng-cloak class="ng-hide button button-icon button-clear ion-ios-star-outline" ng-click="addFavorite()"></button>
+            <button ng-show="isFavorite && !isLoading" ng-cloak class="ng-hide button button-icon button-clear ion-ios-star" ng-click="removeFavorite()"></button>
+        </div>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="color-wrapper">
+            <div class="userProfile">
+                <img ng-src="{{user.profileImageUrl}}">
+                <h2 class="userProfile-title">{{user.name}}</h2>
+                <span>{{user.points}} points</span>
+            </div>
+            <ul class="menuList">
+                <li>
+                    <a ng-href="#/app/users/{{user.id}}/stories" style="display: block;">
+                        <div class="icon-wrapper"><i class="icon ion-ios-book"></i></div>
+                        <h4>Stories</h4><span>{{user.statistics.numStories}}</span>
+                    </a>
+                </li>
+                <li>
+                    <div class="icon-wrapper"><i class="icon ion-document-text"></i></div>
+                    <h4>Drafts</h4><span>{{user.statistics.numChapters}}</span>
+                </li>
+                <li>
+                    <a ng-href="#/app/users/{{user.id}}/favorites" style="display: block;">
+                        <div class="icon-wrapper"><i class="icon ion-pin"></i></div>
+                        <h4>Following</h4><span>{{user.statistics.numFollowing}}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </ion-content>
+</ion-view>

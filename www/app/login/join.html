@@ -1,0 +1,48 @@
+<ion-view class="primaryBackground">
+    <ion-header-bar class="bar bar-header bar-storywars">
+        <!-- button ng-click="$ionicGoBack($event)" class="button back-button buttons  button-clear header-item"><i class="icon ion-ios-arrow-back"></i>
+            <span class="back-text" style="-webkit-transform: translate3d(0px, 0px, 0px);"><span class="default-title">Back</span></span>
+        </button -->
+    </ion-header-bar>
+    <ion-content>
+        <div class="content-wrapper">
+            <div class="socialLogin" style="margin-top: 80px;">
+                <ul class="socialLogin-buttons">
+                    <li>
+                        <a href="" class="socialLogin--facebook" ng-click="loginOauth('facebook')">
+                            <i class="ion-social-facebook"></i>
+                            <span>Sign up via Facebook</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="socialLogin--google" ng-click="loginOauth('google')">
+                            <i class="ion-social-googleplus-outline"></i>
+                            <span>Sign up via Google</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/signup" class="socialLogin--email">
+                            <i class="ion-email"></i>
+                            <span>Sign up via Email</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="socialLogin" style="margin-top: 60px;">
+                <ul class="socialLogin-buttons">
+                    <li>
+                        <h6 class="h5">Already have an account?</h6>
+                        <a href="#/login" class="socialLogin--login">
+                            <i class="ion-locked"></i>
+                            <span>Login</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </ion-content>
+    <ion-footer-bar class="bar-storywars textCenter">
+        <span style="width: 100%; color: white;">By registering you agree to our <a href="#/agreement">Terms of service</a></span>    
+    </ion-footer-bar>
+</ion-view>

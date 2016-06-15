@@ -1,0 +1,157 @@
+/* Stories */
+.storyList {
+	.item {
+		border-bottom: none;
+		&:first-child {
+			border-top: none;
+		}
+		.item-content {
+			padding: 10px 20px;
+			.storyItem-title {
+				margin-bottom: 4px !important;
+  				font-size: 19px;
+			}
+			p {
+				font-size: 16px;
+				line-height: 20px;
+  				white-space: normal;
+				display: -webkit-box;
+  				-webkit-line-clamp: $lines-to-show;
+  				-webkit-box-orient: vertical;
+  				overflow: hidden;
+  				text-overflow: ellipsis;
+			}
+		}
+	}
+	.storyList--footer {
+		font-size: $font-size-four;
+		margin-top: 7px;
+		span {
+			margin-right: 30px;
+		}
+		i {
+			font-size: $font-size-two;
+			position: relative;
+			top: 2px;
+			margin-right: 2px;
+		}
+	}
+}
+
+.storyContent {
+	float: left;
+	width: 100%;
+	.chapterRound {
+		float: left;
+		width: 15px;
+		i {
+			display: none;
+		}
+		color: white;
+		font-weight: bold;
+		font-size: $font-size-four;
+		position: relative;
+		top: 14px;
+		background-color: grey;
+		margin-left: -10px;
+		margin-right: 10px;
+		padding: 0 4px;
+	}
+	p {
+		white-space: pre-wrap;
+	}
+}
+
+.chapterContent {
+	float: left;
+	width: calc(100% - 15px);
+	margin-bottom: 20px;
+}
+.chapterFooter {
+	width: 100%;
+	text-align: left;
+	position: relative;
+	a {
+		color: $primary-color;
+		position: relative;
+		top: -14px;
+		img {
+			width: 30px;
+			height: 30px;
+			border-radius: 40px;
+			border: 1px solid $border-color;
+			position: relative;
+			top: 9px;
+			margin-right: 4px;
+		}
+	}
+	.chapterFooter-flag {
+		float: right;
+	    top: -4px;
+		font-size: 30px;
+	}
+}
+
+.storyAction {
+	float: left;
+	width: 100%;
+	margin-top: 10px;
+	.storyAction-form {
+		padding: 0 10px;
+	}
+}
+
+.storyBar {
+	padding: 5px 10px;
+	color: white;
+	font-weight: bold;
+	background-color: $contrast-color;
+}
+
+.votingContent {
+	background-color: $contrast-fade-color;
+	float: left;
+	padding: 10px 10px 0 10px;
+	width: 100%;
+	margin-bottom: 10px;
+	p {
+		white-space: pre-wrap;
+	}
+	.chapterFooter {
+		height: 10px;
+		.chapterFooter-flag {
+			color: $contrast-color;
+		}
+	}
+}
+
+.votingBar {
+	margin-bottom: 25px;
+	float: left;
+	width: 100%;
+	text-align: center;
+	a {
+		&[disabled=disabled] {
+			color: $grey;
+		}
+		i {
+			font-size: $icon-size-two;
+			position: relative;
+			top: 2px;
+		}
+	}
+	.prevButton {
+		position: absolute;
+		left: 10px;
+		i {
+			margin-right: 2px;
+		}
+	}
+	.nextButton {
+		position: absolute;
+		right: 10px;
+		i {
+			margin-left: 2px;
+		}
+	}
+}

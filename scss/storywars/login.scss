@@ -1,0 +1,66 @@
+/* Login */
+.socialLogin {
+	text-align: center;
+	.socialLogin-buttons {
+		li {
+			display: block;
+			a {
+				position: relative;
+				width: 220px;
+  				display: block;
+  				margin: 0 auto;
+  				margin-bottom: 12px;
+  				background-color: #404040;
+  				color: white;
+  				border-radius: $border-radius;
+  				padding: 10px;
+  				font-size: $font-size-three;
+  				font-weight: bold;
+  				text-align: left;
+  				i {
+					font-size: 36px;
+					position: absolute;
+					top: 2px;
+  				}
+				&.socialLogin--facebook {
+					background-color: $facebook-color;
+					i {
+						font-size: 44px;
+						top: 2px;
+						left: 17px;
+					}
+				}
+				&.socialLogin--google {
+					background-color: $google-color;
+					i {
+						top: 5px;
+						font-size: 32px;
+						left: 13px;
+					}
+				}
+				&.socialLogin--login {
+					background-color: white;
+					color: $secondary-color;
+					text-align: center;
+					i {
+						position: relative;
+						font-size: 18px;
+						top: 1px;
+						margin-right: 2px;
+					}
+					span {
+						left: 0;
+					}
+				}
+  				span {
+  					position: relative;
+  					left: 40px;
+  				}
+			}
+			h6 {
+				font-size: $font-size-four;
+				margin-bottom: 10px !important;
+			}
+		}
+	}
+}

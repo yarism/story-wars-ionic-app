@@ -1,0 +1,80 @@
+<!-- TODO: fix so that story.title is the view title -->
+<!-- Use the topbar to create story -->
+<ion-view>
+      <ion-nav-title>{{story.title}}</ion-nav-title>
+      <ion-nav-buttons side="right">
+            <button ng-show="!isSubscribing && !subscribeIsLoading" ng-cloak class="ng-hide button button-icon button-clear ion-ios-star-outline" ng-click="subscribe()"></button>
+            <button ng-show="isSubscribing && !subscribeIsLoading" ng-cloak class="ng-hide button button-icon button-clear ion-ios-star" ng-click="unsubscribe()"></button>
+      </ion-nav-buttons>
+	<ion-content>
+      	<div class="content-wrapper">
+      		<ul class="storyContent">
+      			<li>
+      				<div class="chapterRound"><i class="ion-ios-paper-outline"></i><span>1</span></div>
+      				<div class="chapterContent">
+	      				<p>{{story.content}}</p>
+		      			<div class="chapterFooter">
+		      				<a ng-href="#/app/users/{{story.author.id}}"><img ng-src="{{story.author.profileImageUrl}}"><span>{{story.author.name}}</span></a>
+                                          <a ng-click="reportChapterModal.show() && storeChapter('story', story.id)" class="chapterFooter-flag"><i class="ion-ios-flag"></i></a>
+		      			</div>
+	      			</div>
+      			</li>
+      			<li ng-repeat="chapter in story.chapters">
+      				<div class="chapterRound"><i class="ion-ios-paper-outline"></i><span>{{chapter.round}}</span></div>
+      				<div class="chapterContent">
+      					<p>{{chapter.content}}</p>
+	      				<div class="chapterFooter">
+		      				<a ng-href="#/app/users/{{chapter.author.id}}"><img ng-src="{{chapter.author.profileImageUrl}}"><span>{{chapter.author.name}}</span></a>
+                                          <a ng-click="reportChapterModal.show() && storeChapter('chapter', chapter.id)" class="chapterFooter-flag"><i class="ion-ios-flag"></i></a>
+		      			</div>
+      				</div>
+      			</li>
+      		</ul>
+      	</div>
+            <div class="storyAction" style="position: relative;">
+                  <!-- Writing mode -->
+                  <div ng-if="isWrite()">
+                        <div ng-if="!story.user_can_write">
+                              <div class="storyBar textCenter marginBottom--double">
+                                    <span>You have written a draft for chapter {{story.round}}<br>Voting will begin soon</span>
+                              </div>
+                        </div>
+                        <div ng-if="story.user_can_write">
+                              <div class="storyBar">
+                                    <span>Write a draft for chapter {{story.round}}</span>
+                                    <!-- a ng-click="createChapter(content)" ng-show="content" style="position: absolute; right: 10px; font-weight: bold;"> Submit</a -->
+                              </div>
+                              <form class="storyAction-form" ng-submit="createChapter(content)">
+                                    <textarea class="textInput inputTextarea" ng-model="content" placeholder="Your story"></textarea>
+                                    <button ng-show="content" class="button customButton secondaryCustomButton pull-right" type="submit">Submit</button>
+                              </form>
+                        </div>
+                  </div>
+
+                  <!-- Voting mode -->
+                  <div ng-if="isVote()">
+                        <div ng-if="!story.user_can_vote">
+                              <div class="storyBar textCenter marginBottom--double">
+                                    <span>You have voted on chapter {{story.round}}<br>The next round will begin soon</span>
+                              </div>
+                        </div>
+                        <div ng-if="story.user_can_vote">
+                              <div class="storyBar">
+                                    <span>Vote on your favorite draft for chapter {{story.round}}</span>
+                              </div>
+                              <div class="votingContent">
+                                    <p>{{submittedChapters[submittedChaptersIndex].content}}</p>
+                                    <div class="chapterFooter">
+                                          <a ng-click="reportChapterModal.show() && storeChapter('chapter', submittedChapters[submittedChaptersIndex].id)" class="chapterFooter-flag"><i class="ion-ios-flag"></i></a>
+                                    </div>
+                              </div>
+                              <div class="votingBar">
+                                    <a class="prevButton secondaryLink" ng-click="showPrevChapter(submittedChaptersIndex === 0)" ng-disabled="submittedChaptersIndex === 0"><i class="ion-ios-arrow-left"></i> <span>Previous</span></a>
+                                    <button class="button customButton secondaryCustomButton icon-left ion-checkmark-circled" ng-click="voteOnChapter(submittedChapters[submittedChaptersIndex].id)" style="margin-top: -3px;">Vote</button>
+                                    <a class="nextButton secondaryLink" ng-click="showNextChapter(submittedChaptersIndex === submittedChapters.length - 1)" ng-disabled="submittedChaptersIndex === submittedChapters.length - 1"><span>Next draft</span> <i class="ion-ios-arrow-right"></i></a>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+  	</ion-content>
+</ion-view>

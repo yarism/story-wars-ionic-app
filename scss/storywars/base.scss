@@ -1,0 +1,336 @@
+/* variables */
+
+$primary-color: #f35f5f;
+$primary-dark-color: #f24848;
+$secondary-color: #f37e5f;
+$contrast-color: #00d69c;
+$contrast-dark-color: #01c691;
+$contrast-fade-color: #f0fffb;
+$border-color: #f6f6f6;
+$facebook-color: #3b5999;
+$google-color: #dc4a38;
+$font-size-one: 22px;
+$font-size-two: 17px;
+$font-size-three: 14px;
+$font-size-four: 12px;
+$icon-size-one: 24px;
+$icon-size-two: 18px;
+$lines-to-show: 2;
+$input-grey: rgba(215, 215, 215, 0.3);
+$grey: #b4b4b4;
+$border-radius: 3px;
+
+.h1, .h2, .h3, .h4, .h5  {
+	font-weight: 500 !important;
+	margin-bottom: 5px !important;
+}
+
+.content-wrapper {
+	margin-top: 15px;
+	padding: 0 10px;
+}
+
+.modalContent-wrapper {
+	margin-top: 80px;
+}
+
+.color-wrapper {
+	padding: 0 10px;
+	padding-top: 40px;
+	background-color: $primary-color;
+	min-height: 1000px;
+	.spinner {
+		stroke: white;
+		fill: white;
+	}
+}
+
+.center-wrapper {
+ 	margin: 0 auto;
+ 	margin-top: 80px;
+ 	width: 260px;
+}
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none !important;
+}
+
+/* Override */
+/*.item {
+  border-color: $border-color;
+}*/
+
+a {
+	text-decoration: none;
+	font-weight: 500;
+	color: white;
+}
+
+p {
+	font-size: $font-size-two;
+	line-height: $font-size-one;
+}
+
+.slider-slides {
+	.box {
+		@media screen and (max-height: 600px) {
+			min-height: 400px;
+		}
+		@media screen and (max-height: 500px) {
+			min-height: 300px;
+		}
+		@media screen and (min-height: 600px) {
+			min-height: 500px;
+		}
+	}
+}
+
+.spinner {
+	stroke: $primary-color;
+	fill: $primary-color;
+}
+
+.whiteIcon.spinner {
+	stroke: white;
+	fill: white;
+}
+
+.backdrop {
+	background-color: $primary-color;
+}
+
+.loading-container {
+	.loading {
+		background: none;
+		.spinner {
+			stroke: white;
+			fill: white;
+		}
+	}
+}
+
+/* Helper classes */
+.primaryColor {
+	color: $primary-color;
+}
+
+.bold {
+	font-weight: 500 !important;
+}
+
+.marginTop {
+	margin-top: 10px;
+}
+
+.marginTop--15px {
+	margin-top: 15px;
+}
+
+.marginTop--double {
+	margin-top: 20px;
+}
+
+.marginBottom {
+	margin-bottom: 10px;
+}
+
+.marginBottom--15px {
+	margin-bottom: 15px;
+}
+
+.marginBottom--double {
+	margin-bottom: 20px;
+}
+
+.textCenter {
+	text-align: center;
+}
+
+.fullWidth {
+	width: 100%;
+}
+
+.pull-left {
+	float: left;
+}
+
+.pull-right {
+	float: right;
+}
+
+/* Inputs & buttons */
+
+::-webkit-input-placeholder {
+    color: $input-grey;
+}
+
+textarea, input[type="text"], input[type="password"], input[type="number"], input[type="email"], input[type="url"], input[type="search"] {
+	&.textInput {
+		font-size: $font-size-two;
+		line-height: $font-size-two;
+		width: 100%;
+		padding: 10px 0;
+		height: auto;
+		position: relative;
+  		top: 2px;
+	}
+	&.inputTitle {
+		font-size: $font-size-one;
+		border-bottom: 2px solid $input-grey;
+	}
+	&.inputTextarea {
+		border: none;
+		resize: none;
+		min-height: 200px;
+	}
+	&.iconTextInput {
+		font-size: $font-size-three;
+		padding: 15px;
+    	text-decoration: inherit;
+		::-webkit-input-placeholder {
+			color: $input-grey;
+		}
+	}
+}
+
+.standardButton {
+	position: relative;
+	background-color: #404040;
+	color: white;
+	border-radius: 3px;
+	padding: 10px;
+	font-size: $font-size-three;
+	font-weight: bold;
+	text-align: center;
+	border: none;
+}
+
+.customButton {
+	font-size: $font-size-three;
+	line-height: 30px;
+	min-height: 0;
+	text-transform: uppercase;
+	border: none;
+	background-color: $primary-color;
+	color: white;
+	padding: 0 10px;
+	&.icon:before, &.icon-left:before, &.icon-right:before {
+		font-size: 16px;
+  		line-height: 30px;
+	}
+	&.activated {
+		background-color: $primary-dark-color;
+		border: none;
+		box-shadow: none;
+	}
+}
+
+.secondaryCustomButton {
+	background-color: $contrast-color;
+	&.activated {
+		background-color: $contrast-dark-color;
+	}
+}
+
+.primaryLink {
+	color: $primary-color;
+	&:active {
+		color: $primary-dark-color;
+	}
+}
+
+.secondaryLink {
+	color: $contrast-color;
+	&:active {
+		color: $contrast-dark-color;
+	}
+}
+
+/* Background */
+
+.gradientBackground {
+	background: linear-gradient($primary-color, $secondary-color);
+	h1, h2, h3, h4, h5, h6, p {
+		color: white;
+	}
+	.slider-pager .slider-pager-page {
+		color: white;
+	}
+	.slider-pager-page.active {
+		color: white;
+	}
+	a {
+		color: white;
+		font-weight: bold;
+	}
+}
+
+.primaryBackground {
+	background-color: $primary-color;
+	h1, h2, h3, h4, h5, h6, p {
+		color: white;
+	}
+	.slider-pager .slider-pager-page {
+		color: white;
+	}
+	.slider-pager-page.active {
+		color: white;
+	}
+	a {
+		color: white;
+		font-weight: bold;
+	}
+}
+
+/* Top bar */
+.bar.bar-storywars {
+	background-image: none;
+	border: none;
+	background-color: $primary-color;
+	.button.button-clear, .button.back-button {
+		color: white;
+	}
+	.title {
+		color: white;
+	}
+}
+
+
+/* Button bar */
+.button-bar {
+	padding: 10px;
+	.button {
+		font-size: $font-size-three;
+		line-height: 26px;
+		min-height: 0;
+		color: $primary-color;
+		border-color: $primary-color;
+		background-color: white;
+	}
+	.button-selected {
+		color: white;
+		background-color: $primary-color;
+	}
+}
+
+
+/* Lists */
+
+.usersList {
+	img {
+		width: 40px;
+		height: 40px;
+		border-radius: 20px;
+	}
+	span {
+		position: relative;
+		top: -13px;
+		left: 10px;
+	}
+}
+
+.standardList {
+	li {
+		margin-bottom: 10px;
+	}
+}

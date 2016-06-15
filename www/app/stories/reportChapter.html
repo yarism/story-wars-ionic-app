@@ -1,0 +1,17 @@
+<ion-modal-view>
+    <div class="bar bar-header bar-storywars">
+        <button class="button button-clear" ng-click="reportChapterModal.hide()">Cancel</button>
+        <h1 class="title">Report chapter</h1>
+        <button class="button button-clear button-primary bold" ng-click="reportChapter(reason)" ng-disabled="!reason">Report</button>
+    </div>
+    <div class="modalContent-wrapper">
+        <div class="content-wrapper marginBottom--double">
+            <h4>Why do you want to report it?</h4>
+        </div>
+        <ion-radio ng-model="reason" value="comments">Comments or spam</ion-radio>
+        <ion-radio ng-model="reason" value="offensive">Racist, sexist or propaganda</ion-radio>
+        <ion-radio ng-model="reason" value="attack">Attack on other writers</ion-radio>
+        <ion-radio ng-model="reason" value="other">Other</ion-radio>
+        </div>
+    </div>
+</ion-modal-view>

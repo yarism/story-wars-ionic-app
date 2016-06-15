@@ -1,0 +1,12 @@
+{
+  "name": "storywarsApp",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "~1.0.1"
+  },
+  "dependencies": {
+    "ionic": "~1.0.1",
+    "ngCordova": "~0.1.17-alpha",
+    "satellizer": "~0.11.2"
+  }
+}
